@@ -1,0 +1,39 @@
+Table EMBED_TEST created.
+
+Table EMBED_TEST altered.
+
+2,000 rows updated.
+
+Elapsed: 00:00:45.526
+
+Commit complete.
+
+Elapsed: 00:00:00.006
+
+2,000 rows updated.
+
+Elapsed: 00:00:00.027
+
+Commit complete.
+
+Elapsed: 00:00:00.003
+
+Session altered.
+
+Elapsed: 00:00:00.003
+
+2,000 rows updated.
+
+Elapsed: 00:00:44.770
+
+Commit complete.
+
+Elapsed: 00:00:00.003
+
+Explained.
+
+OPERATION                OBJECT_NAME
+________________________ ______________
+UPDATE STATEMENT
+  UPDATE                 EMBED_TEST
+    TABLE ACCESS FULL    EMBED_TEST

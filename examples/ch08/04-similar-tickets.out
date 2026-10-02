@@ -1,0 +1,7 @@
+   TICKET_ID SUBJECT                            STATUS         DISTANCE
+____________ __________________________________ ___________ ___________
+         154 Duplicate charge on credit card    Closed            0.008
+         361 Duplicate charge on credit card    Closed            0.045
+          15 Duplicate charge on credit card    Resolved          0.047
+         375 Invoice paid two times             Resolved          0.158
+         104 Invoice paid two times             Resolved          0.162

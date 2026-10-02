@@ -1,0 +1,18 @@
+View TICKET_DV created.
+
+DOCUMENT
+__________________________________________________________________________________________________
+{
+  "_id" : 15,
+  "subject" : "Duplicate charge on credit card",
+  "status" : "Resolved",
+  "comments" :
+  [
+    {
+      "commentId" : 16,
+      "author" : "Agent",
+      "body" : "The second charge was a retry after a timeout at the payment gateway. I have
+refunded it; banks show the refund within 5 to 10 business days. See article KB-201."
+    }
+  ]
+}

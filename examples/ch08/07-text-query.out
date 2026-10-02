@@ -1,0 +1,9 @@
+Function TEXT_QUERY compiled
+
+TEXT_QUERY
+__________________________________________________
+{Is} accum {8.4.1} accum {released} accum {yet}
+
+ARTICLE_ID    TITLE                 SCORE
+_____________ __________________ ________
+KB-602        API rate limits          36

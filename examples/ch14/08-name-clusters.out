@@ -1,0 +1,12 @@
+   CLUSTER_ID    TICKETS NAME
+_____________ __________ _________________________________________
+           15         94 Billing, Invoices, and Data Issues
+           14         93 Account Management and Data Operations
+           11         72 Account Access and Notifications
+           13         58 Sync, API, and Data Issues
+            9         32 App Crashes and Loading Failures
+            3         21 Dark Mode Requests
+            7         16 Desktop App Deployment
+            5         14 Two-Factor Authentication Support
+
+8 rows selected.

@@ -1,0 +1,21 @@
+PROMPT
+__________________________________________________________________________________________________
+Sources:
+[1] Article KB-201: A duplicate charge usually happens when the payment gateway times out and the
+charge is retried. Support refunds the duplicate as soon as it is reported. Refunds appear on card
+statements within 5 to 10 business days, depending on the bank. Never pay the same invoice
+manually after an automatic charge has failed without checking the invoice status first.
+
+[2] Atlas Billing 5.2 User Guide, part 6: A payment can also fail because the payment gateway does
+not answer in time. In that case the charge
+
+is retried at once, and in rare cases both charges succeed: the customer is charged twice. Atlas
+detects
+
+most duplicate charges within 24 hours and refunds them automatically.
+
+Refunds and credit notes
+
+A refund returns money to the customer's payment method. Refunds to cards appear on the card
+
+statement within 5 to 10 business days, depending on the bank; refunds ...

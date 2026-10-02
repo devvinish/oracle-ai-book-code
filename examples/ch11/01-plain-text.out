@@ -1,0 +1,24 @@
+DEFAULT_ANSWER
+__________________________________________________________________________________________________
+From a customer's perspective, resetting a forgotten password in a modern web application is
+designed to be a simple, secure, self-service process.
+
+Here is the step-by-step breakdown of how it works:
+
+---
+
+### Step-by-Step User Flow
+
+#### 1. Click "Forgot Password"
+* On the login page, the customer clicks the **"Forgot Password?"** or **"Trouble signing in?"**
+link typically located near the password field.
+
+#### 2. Enter Identifying Information
+* The customer is taken to a recovery page where
+
+PLAIN_ANSWER
+__________________________________________________________________________________________________
+A customer begins by clicking the "Forgot Password" link on the login page and entering their
+registered email address or username. The web application then sends a secure, time-sensitive
+reset link or verification code to that email address. Finally, the customer clicks the link or
+enters the code to access a secure page where they can enter and save their new password.

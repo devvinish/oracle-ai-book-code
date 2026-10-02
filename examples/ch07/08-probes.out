@@ -1,0 +1,23 @@
+with target accuracy parameters (neighbor partition probes 1)
+  exact:         55.9 ms per query
+  approximate:    0.9 ms per query, 68% of the right results
+
+PL/SQL procedure successfully completed.
+
+with target accuracy parameters (neighbor partition probes 2)
+  exact:         56.1 ms per query
+  approximate:    1.0 ms per query, 88% of the right results
+
+PL/SQL procedure successfully completed.
+
+with target accuracy parameters (neighbor partition probes 5)
+  exact:         55.2 ms per query
+  approximate:    1.2 ms per query, 99% of the right results
+
+PL/SQL procedure successfully completed.
+
+with target accuracy 50
+  exact:         55.4 ms per query
+  approximate:    1.9 ms per query, 100% of the right results
+
+PL/SQL procedure successfully completed.

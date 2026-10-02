@@ -1,0 +1,5 @@
+PL/SQL procedure successfully completed.
+
+JOB_NAME         ENABLED    STATE          RUN_COUNT    FAILURE_COUNT
+________________ __________ ___________ ____________ ________________
+ATLAS_AI_JOBS    FALSE      DISABLED               2                0

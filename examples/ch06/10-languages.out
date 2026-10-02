@@ -1,0 +1,12 @@
+LANG    QUESTION                                                      MINILM_RANK    GEMINI_RANK
+_______ __________________________________________________________ ______________ ______________
+es      Nos cobraron dos veces la misma factura                                14              1
+es      La aplicación del móvil se cierra nada más abrirla                      5              1
+de      Nach mehreren falschen Passwörtern bin ich gesperrt                    12              1
+de      Unser wöchentlicher Bericht kommt nicht mehr per E-Mail                 9              1
+fr      Où puis-je télécharger toutes nos factures en PDF ?                     1              1
+fr      Notre webhook ne se déclenche plus                                      1              1
+pt      Recebi um alerta de um acesso que não fui eu                            1              1
+pt      Como instalar o aplicativo em 300 computadores?                         1              1
+
+8 rows selected.

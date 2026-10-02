@@ -1,0 +1,8 @@
+Error starting at line : 1
+In command -
+select vector_distance(topics, vector('[0.10, 0.90]'))
+from   article_topics
+Error at Command Line : 1 Column : 8
+Error report -
+SQL Error: ORA-51808: VECTOR_DISTANCE() or COSINE_DISTANCE() requires all vectors to have
+the same dimension count. Encountered (3, 2).

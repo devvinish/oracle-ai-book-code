@@ -1,0 +1,15 @@
+ROWS_JSON
+__________________________________________________________________________________________________
+[{"NAME":"Atlas CRM","CURRENT_VERSION":"8.4"},{"NAME":"Atlas
+Billing","CURRENT_VERSION":"5.2"},{"NAME":"Atlas Mobile","CURRENT_VERSION":"3.9"},{"NAME":"Atlas
+Analytics","CURRENT_VERSION":"6.1"},{"NAME":"Atlas
+Connect","CURRENT_VERSION":"4.0"},{"NAME":"Atlas Sync","CURRENT_VERSION":"2.7"}]
+
+Error starting at line : 4
+In command -
+select atlas_reader.query_json('select count(*) from atlas.llm_calls') as rows_json
+from   dual
+Error at Command Line : 4 Column : 8
+Error report -
+SQL Error: ORA-00942: table or view "ATLAS"."LLM_CALLS" does not exist
+ORA-06512: at "ATLAS_READER.QUERY_JSON", line 6

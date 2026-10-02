@@ -1,0 +1,17 @@
+declare
+*
+ERROR at line 1:
+ORA-20950: Tools requiring confirmation are not supported in this context.
+ORA-06512: at "APEX_260100.WWV_FLOW_AI", line 5800
+ORA-06512: at "APEX_260100.WWV_FLOW_AI", line 4109
+ORA-06512: at "APEX_260100.WWV_FLOW_AI", line 4554
+ORA-06512: at "APEX_260100.WWV_FLOW_AI_API", line 197
+ORA-06512: at line 4
+
+   TICKET_ID PRIORITY
+____________ ___________
+          11 High
+
+   ACTIONS
+__________
+         1

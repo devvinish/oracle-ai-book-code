@@ -1,0 +1,8 @@
+MODEL_NAME           MINING_FUNCTION    ALGORITHM       SIZE_MB
+____________________ __________________ ____________ __________
+ALL_MINILM_L12_V2    EMBEDDING          ONNX                127
+
+ATTRIBUTE_NAME    ATTRIBUTE_TYPE    DATA_TYPE    VECTOR_INFO
+_________________ _________________ ____________ ______________________
+DATA              TEXT              VARCHAR2
+ORA$ONNXTARGET    VECTOR            VECTOR       VECTOR(384,FLOAT32)

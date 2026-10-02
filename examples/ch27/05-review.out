@@ -1,0 +1,21 @@
+Table ATLAS_DOCUMENTS altered.
+
+8 rows updated.
+
+Commit complete.
+
+View KNOWLEDGE created.
+
+ANSWER
+__________________________________________________________________________________________________
+Yes, duplicate charges are refunded [1], [2]. Atlas detects most duplicate charges within 24 hours
+and refunds them automatically, or Support will refund the duplicate as soon as it is reported
+[1], [2]. Refunds appear on your card statement within 5 to 10 business days, depending on your
+bank, while direct debit refunds take up to 3 business days [1], [2].
+
+   N SOURCE
+____ _______________________________________
+   1 Article KB-201
+   2 Atlas Billing 5.2 User Guide, part 6
+   3 Atlas Billing 5.2 User Guide, part 8
+   4 Atlas Billing 5.2 User Guide, part 3

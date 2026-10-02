@@ -1,0 +1,13 @@
+   TICKET_ID SUBJECT                                     SHORT_SUBJECT
+____________ ___________________________________________ ___________________________________
+           1 Need to enable two-factor authentication    Enable Two-Factor Authentication
+           2 Sync app shows pending forever              Sync stuck on pending
+           3 App closes immediately on Android           App crashes on Android
+           4 Connect Atlas to Outlook calendar           Connect Atlas to Outlook
+           5 Report subscription stopped                 Subscription stopped working
+
+Elapsed: 00:00:07.593
+
+   CALLS    TOTAL_MS
+________ ___________
+       5        7305

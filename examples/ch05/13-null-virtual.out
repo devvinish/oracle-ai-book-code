@@ -1,0 +1,12 @@
+EMBEDDING_OF_NULL
+____________________
+null
+
+Error starting at line : 5
+In command -
+create table ticket_drafts (
+  text       varchar2(4000),
+  embedding  vector generated always as
+               (vector_embedding(all_minilm_l12_v2 using text as data)) virtual)
+Error report -
+ORA-54003: specified data type is not supported for a virtual column

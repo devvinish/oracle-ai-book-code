@@ -1,0 +1,9 @@
+Explained.
+
+OPERATION                      OBJECT_NAME
+______________________________ _________________
+SELECT STATEMENT
+  COUNT STOPKEY
+    VIEW
+      SORT ORDER BY STOPKEY
+        TABLE ACCESS FULL      TICKET_ARCHIVE

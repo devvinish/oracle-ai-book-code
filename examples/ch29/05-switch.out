@@ -1,0 +1,17 @@
+1 row updated.
+
+Commit complete.
+
+Error starting at line : 5
+In command -
+select ask('Can I get my money back for a duplicate charge?') as answer from dual
+Error at Command Line : 5 Column : 8
+Error report -
+SQL Error: ORA-20100: AI features are switched off
+ORA-06512: at "ATLAS.GENERATE", line 33
+ORA-06512: at "ATLAS.ASK", line 40
+ORA-06512: at line 1
+
+1 row updated.
+
+Commit complete.

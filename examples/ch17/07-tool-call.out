@@ -1,0 +1,11 @@
+declare
+*
+ERROR at line 1:
+ORA-20954: The HTTP request to Generative AI Service at
+https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent failed
+with HTTP-400: 400: Role &#x27;function&#x27; is not supported. Please use a valid role: SYSTEM,
+SYSTEM_1, USER, ASSISTANT, DEVELOPER, CONTEXT, USER_CONTEXT, MODEL, USER.
+ORA-06512: at "APEX_260100.WWV_FLOW_AI", line 4389
+ORA-06512: at "APEX_260100.WWV_FLOW_AI", line 4554
+ORA-06512: at "APEX_260100.WWV_FLOW_AI_API", line 228
+ORA-06512: at line 4

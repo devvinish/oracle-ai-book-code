@@ -1,0 +1,18 @@
+8 rows inserted.
+
+8 rows updated.
+
+Commit complete.
+
+QUESTION                                     SEMANTIC_RANK    KEYWORD_RANK
+_________________________________________ ________________ _______________
+Where do we enter our GSTIN?                             1               1
+Can we roll it out with Intune?                          2               1
+What does the Retry-After header mean?                   4               1
+Is 8.4.1 released yet?                                   3               1
+Defender keeps holding our mails                         2               1
+Does 3.9.1 fix it?                                       1               1
+Our MSI install fails                                    1               1
+What is a weighted forecast?                             1               1
+
+8 rows selected.

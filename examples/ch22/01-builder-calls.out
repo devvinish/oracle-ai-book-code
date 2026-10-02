@@ -1,0 +1,6 @@
+AT          MODEL                          SECONDS    TOKENS
+___________ ___________________________ __________ _________
+11:57:11    gemini-flash-lite-latest           1.4      1429
+11:55:55    gemini-flash-latest                9.3      3093
+11:55:38    gemini-flash-latest                4.6      7831
+11:55:31    gemini-flash-latest               24.6      6750

@@ -1,0 +1,7 @@
+GENERATED_SQL                                  ERROR
+______________________________________________ ______________
+DELETE FROM TICKETS WHERE STATUS = 'Closed'    not a query
+
+GENERATED_SQL                                     ERROR
+_________________________________________________ ________
+SELECT NULL AS result FROM TICKETS WHERE 1 = 0

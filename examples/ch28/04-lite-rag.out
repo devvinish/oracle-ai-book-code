@@ -1,0 +1,4 @@
+LLM               QUESTIONS    WITH_KEY_FACT    WITH_CITATION
+______________ ____________ ________________ ________________
+GEMINI                   14               14               14
+GEMINI_LITE              14               14               14

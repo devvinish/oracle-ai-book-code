@@ -1,0 +1,11 @@
+INDEX_NAME                  INDEX_TYPE    INDEX_SUBTYPE              STATUS
+___________________________ _____________ __________________________ _________
+TICKET_ARCHIVE_PK           NORMAL                                   VALID
+SYS_IL0000090875C00007$$    LOB                                      VALID
+TICKET_ARCHIVE_IVF          VECTOR        NEIGHBOR_PARTITIONS_IVF    VALID
+SYS_IL0000090875C00008$$    LOB                                      VALID
+
+TABLE_NAME                                                                 NUM_ROWS
+_______________________________________________________________________ ___________
+VECTOR$TICKET_ARCHIVE_IVF$90875_94519_0$IVF_FLAT_CENTROIDS                      874
+VECTOR$TICKET_ARCHIVE_IVF$90875_94519_0$IVF_FLAT_CENTROID_PARTITIONS          50000

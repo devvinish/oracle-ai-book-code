@@ -1,0 +1,18 @@
+SETTING            VALUE
+__________________ ______________________________
+CHUNK_BY           WORDS
+CHUNK_MAX          100
+CHUNK_NORMALIZE    ALL
+CHUNK_OVERLAP      0
+CHUNK_SPLIT        RECURSIVELY
+MODEL_NAME         "ATLAS"."ALL_MINILM_L12_V2"
+VECTOR_ACCURACY    95
+VECTOR_DATATYPE    *
+VECTOR_DISTANCE    COSINE
+VECTOR_IDXTYPE     IVF
+
+10 rows selected.
+
+IDX_SYNC_TYPE    IDX_SYNC_INTERVAL
+________________ ____________________________
+AUTOMATIC        FREQ=SECONDLY; INTERVAL=5

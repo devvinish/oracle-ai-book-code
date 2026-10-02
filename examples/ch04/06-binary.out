@@ -1,0 +1,11 @@
+BITS           DIMS
+___________ _______
+[170,15]         16
+
+Error starting at line : 6
+In command -
+select to_vector('[170, 15]', 12, binary) from dual
+Error at Command Line : 6 Column : 35
+Error report -
+SQL Error: ORA-51813: Vector of BINARY format should have a dimension count that is a
+multiple of 8.

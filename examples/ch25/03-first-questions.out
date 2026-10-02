@@ -1,0 +1,20 @@
+Question: How many open tickets does each product have?
+SQL: SELECT p.NAME, COUNT(t.TICKET_ID) AS OPEN_TICKETS FROM PRODUCTS p LEFT JOIN TICKETS t ON
+     p.PRODUCT_ID = t.PRODUCT_ID AND t.STATUS = 'Open' GROUP BY p.NAME
+Rows: 6, chart points: 6
+Answer: Atlas Analytics has 11 open tickets, Atlas Billing has 12, Atlas CRM has 8, Atlas Connect
+        has 8, Atlas Mobile has 6, and Atlas Sync has 8.
+
+Question: Which agent resolved the most tickets?
+SQL: SELECT AGENTS.NAME FROM AGENTS JOIN TICKETS ON AGENTS.AGENT_ID = TICKETS.AGENT_ID WHERE
+     TICKETS.STATUS = 'Resolved' GROUP BY AGENTS.NAME ORDER BY COUNT(*) DESC FETCH FIRST 1 ROWS
+     ONLY
+Rows: 1, chart points: 0
+Answer: Emma Lindqvist resolved the most tickets.
+
+Question: Delete the tickets that are closed.
+SQL: DELETE FROM TICKETS WHERE STATUS = 'Closed'
+Rows: , chart points: 0
+Answer: Error: not a query
+
+PL/SQL procedure successfully completed.

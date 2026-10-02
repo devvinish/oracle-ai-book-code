@@ -1,0 +1,14 @@
+create or replace trigger tickets_embedding_trg
+*
+ERROR at line 1:
+ORA-25006: cannot specify this column in UPDATE OF clause
+
+Trigger TICKETS_EMBEDDING_TRG compiled
+
+1 row inserted.
+
+   TICKET_ID    DIMENSIONS
+____________ _____________
+        9001           384
+
+Rollback complete.

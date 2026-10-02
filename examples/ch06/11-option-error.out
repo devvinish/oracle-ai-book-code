@@ -1,0 +1,19 @@
+Error starting at line : 1
+In command -
+select vector_dimension_count(dbms_vector_chain.utl_to_embedding(
+         'I cannot sign in to my account',
+         json('{"provider": "googleai",
+                "credential_name": "GEMINI_CRED",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/",
+                "model": "gemini-embedding-001",
+                "outputDimensionality": 768}'))) as dimensions
+from   dual
+Error at Command Line : 1 Column : 31
+Error report -
+SQL Error: ORA-20000: Oracle Text error:
+DRG-50857: oracle error in dbms_vector_chain.utl_to_embedding(clob)
+ORA-20002: The provider returned an error - Invalid JSON payload received.
+Unknown name "outputDimensionality": Cannot find field.
+ORA-06512: at "CTXSYS.DRUE", line 192
+ORA-06512: at "CTXSYS.DBMS_VECTOR_CHAIN", line 976
+ORA-06512: at line 1

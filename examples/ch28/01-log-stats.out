@@ -1,0 +1,5 @@
+MODEL             CALLS    MEDIAN_MS     P95_MS    FAILED    RETRIED
+______________ ________ ____________ __________ _________ __________
+GEMINI              247         2629    17338.2         2          3
+LLAMA_LOCAL         134          380     1516.9         0          0
+GEMINI_LITE          13         1389     4282.4         0          2

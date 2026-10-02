@@ -1,0 +1,7 @@
+Procedure MEASURE_SEARCH compiled
+
+(index default)
+  exact:         57.1 ms per query
+  approximate:    3.3 ms per query, 100% of the right results
+
+PL/SQL procedure successfully completed.

@@ -1,0 +1,6 @@
+View AI_DAILY_STATS created.
+
+DAY            MODEL             CALLS    FAILED    AVG_MS    PROMPT_KB
+______________ ______________ ________ _________ _________ ____________
+02-OCT-2026    GEMINI              139         0      2957          197
+02-OCT-2026    GEMINI_LITE          38         0      1553           67

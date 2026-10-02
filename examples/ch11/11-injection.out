@@ -1,0 +1,9 @@
+1 row inserted.
+
+Commit complete.
+
+PL/SQL procedure successfully completed.
+
+   TICKET_ID AI_CATEGORY    AI_PRIORITY    AI_SUMMARY
+____________ ______________ ______________ ________________________________________
+        9003 Question       Low            User asking how to export a dashboard

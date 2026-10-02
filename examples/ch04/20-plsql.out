@@ -1,0 +1,11 @@
+Function TOPIC_VECTOR compiled
+
+ARTICLE_ID       DISTANCE
+_____________ ___________
+KB-301             0.0017
+KB-401             0.0075
+
+Dimensions: 3
+Closest article is .0098 away
+
+PL/SQL procedure successfully completed.

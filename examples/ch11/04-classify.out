@@ -1,0 +1,13 @@
+Procedure CLASSIFY_TICKETS compiled
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:01:19.600
+
+   TICKETS    CLASSIFIED
+__________ _____________
+       400           400
+
+   CALLS    AVG_MS
+________ _________
+      17      4653

@@ -1,0 +1,10 @@
+AGENT               SIMILAR_TICKETS    AVG_HOURS    AVG_SATISFACTION
+________________ __________________ ____________ ___________________
+Yusuf Demir                       5           28                 3.5
+Priya Raman                       4           17                   3
+Daniel Okafor                     4           23                   4
+Sofia Marquez                     3           64                   3
+Arjun Mehta                       2            5                   4
+Hannah Becker                     2           38                   4
+
+6 rows selected.

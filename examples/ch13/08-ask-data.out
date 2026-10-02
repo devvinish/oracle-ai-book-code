@@ -1,0 +1,21 @@
+Function ASK_DATA compiled
+
+RESULT
+__________________________________________________________________________________________________
+{
+  "question" : "Which three agents resolved the most tickets?",
+  "sql" : "SELECT a.NAME FROM AGENTS a JOIN TICKETS t ON a.AGENT_ID = t.AGENT_ID WHERE t.STATUS =
+'Resolved' GROUP BY a.NAME ORDER BY COUNT(*) DESC FETCH FIRST 3 ROWS ONLY",
+  "rows" :
+  [
+    {
+      "NAME" : "Emma Lindqvist"
+    },
+    {
+      "NAME" : "Sofia Marquez"
+    },
+    {
+      "NAME" : "Yusuf Demir"
+    }
+  ]
+}

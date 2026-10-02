@@ -1,0 +1,64 @@
+Table NL2SQL_TABLES created.
+
+6 rows inserted.
+
+Commit complete.
+
+Function DESCRIBE_SCHEMA compiled
+
+SCHEMA_DESCRIPTION
+__________________________________________________________________________________________________
+Table AGENTS -- The support agents of Atlas Support
+  AGENT_ID NUMBER
+  NAME VARCHAR2 values: 'Priya Raman', 'Daniel Okafor', 'Sofia Marquez', 'Liam Chen', 'Hannah
+Becker', 'Arjun Mehta', 'Emma Lindqvist', 'Yusuf Demir'
+  TEAM VARCHAR2 values: 'Tier 1', 'Tier 2', 'Billing', 'Engineering'
+  EMAIL VARCHAR2
+Table CUSTOMERS -- Companies that use Atlas products, with their main contact
+  CUSTOMER_ID NUMBER
+  COMPANY VARCHAR2
+  CONTACT_NAME VARCHAR2
+  EMAIL VARCHAR2
+  COUNTRY VARCHAR2
+  PLAN VARCHAR2 values: 'Professional', 'Basic', 'Enterprise'
+  CUSTOMER_SINCE DATE
+Table KB_ARTICLES -- Knowledge base: short help articles that answer common questions
+  ARTICLE_ID VARCHAR2
+  PRODUCT_ID NUMBER -- The product the article is about; null for articles about the Atlas account
+  TITLE VARCHAR2
+  BODY CLOB
+  UPDATED_ON DATE
+Table PRODUCTS -- The six software products of Atlas Software
+  PRODUCT_ID NUMBER
+  NAME VARCHAR2 values: 'Atlas Analytics', 'Atlas Billing', 'Atlas CRM', 'Atlas Connect', 'Atlas
+Mobile', 'Atlas Sync'
+  CATEGORY VARCHAR2 values: 'Sales', 'Finance', 'Mobile', 'Reporting', 'Integration', 'Desktop'
+  CURRENT_VERSION VARCHAR2 values: '8.4', '5.2', '3.9', '6.1', '4.0', '2.7'
+  DESCRIPTION VARCHAR2
+Table TICKETS -- Support requests: what the customer wrote, priority, status, and outcome
+  TICKET_ID NUMBER
+  CUSTOMER_ID NUMBER
+  PRODUCT_ID NUMBER
+  AGENT_ID NUMBER
+  SUBJECT VARCHAR2
+  DESCRIPTION CLOB
+  PRIORITY VARCHAR2 values: 'Low', 'High', 'Normal', 'Urgent'
+  STATUS VARCHAR2 values: 'Open', 'Closed', 'Resolved', 'In Progress', 'Waiting'
+  CATEGORY VARCHAR2 values: 'Account', 'Billing', 'Bug', 'Question', 'Feature Request'
+  CHANNEL VARCHAR2 values: 'Portal', 'Email', 'Chat', 'Phone'
+  CREATED_AT TIMESTAMP(6)
+  RESOLVED_AT TIMESTAMP(6)
+  SATISFACTION NUMBER -- Customer rating from 1 (poor) to 5 (excellent), given when the ticket is
+closed
+Table TICKET_COMMENTS -- The conversation of each ticket after the first message
+  COMMENT_ID NUMBER
+  TICKET_ID NUMBER
+  AUTHOR_TYPE VARCHAR2 values: 'Agent', 'Customer'
+  AUTHOR_NAME VARCHAR2
+  BODY CLOB
+  CREATED_AT TIMESTAMP(6)
+Join KB_ARTICLES.PRODUCT_ID to PRODUCTS
+Join TICKETS.AGENT_ID to AGENTS
+Join TICKETS.CUSTOMER_ID to CUSTOMERS
+Join TICKETS.PRODUCT_ID to PRODUCTS
+Join TICKET_COMMENTS.TICKET_ID to TICKETS

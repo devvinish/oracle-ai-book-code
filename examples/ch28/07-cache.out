@@ -1,0 +1,12 @@
+Table ANSWER_CACHE created.
+
+Function ASK_CACHED compiled
+
+ANSWER
+________________________________________________________________________
+Enterprise accounts can create up to 20 custom roles per account [1].
+
+QUESTION                                                        DISTANCE AT_0_12    AT_0_25
+____________________________________________________________ ___________ __________ __________
+What is the maximum number of custom roles on Enterprise?          0.106 reused     reused
+How many users can an Enterprise account have?                     0.205 asked      reused

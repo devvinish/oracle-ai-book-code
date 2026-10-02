@@ -1,0 +1,11 @@
+Table LLM_CALLS created.
+
+Function GENERATE compiled
+
+ANSWER
+__________
+Mercury
+
+MODEL        ATTEMPTS    ELAPSED_MS PROMPT                                         RESPONSE
+_________ ___________ _____________ ______________________________________________ ___________
+GEMINI              1          2491 Name the smallest planet of the solar sy...    Mercury

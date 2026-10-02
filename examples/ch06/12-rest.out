@@ -1,0 +1,6 @@
+HTTP status: 200
+Response:    {"embedding":{"values":[0.030464923,0.014785889,-0.011097522,-0.042740...
+Dimensions:  768
+Length:      .5801
+
+PL/SQL procedure successfully completed.

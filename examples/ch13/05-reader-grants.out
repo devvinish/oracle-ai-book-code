@@ -1,0 +1,12 @@
+PL/SQL procedure successfully completed.
+
+TABLE_NAME         PRIVILEGE
+__________________ ____________
+AGENTS             SELECT
+CUSTOMERS          SELECT
+KB_ARTICLES        SELECT
+PRODUCTS           SELECT
+TICKETS            SELECT
+TICKET_COMMENTS    SELECT
+
+6 rows selected.

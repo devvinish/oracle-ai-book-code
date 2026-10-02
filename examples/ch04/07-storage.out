@@ -1,0 +1,19 @@
+Table SIZE_F32 created.
+
+Table SIZE_INT8 created.
+
+Table SIZE_BINARY created.
+
+2,000 rows inserted.
+
+2,000 rows inserted.
+
+2,000 rows inserted.
+
+Commit complete.
+
+TABLE_NAME          MB
+______________ _______
+SIZE_F32             5
+SIZE_INT8            2
+SIZE_BINARY       0.31

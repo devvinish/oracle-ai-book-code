@@ -1,0 +1,20 @@
+Table DOC_CHUNKS created.
+
+44 rows inserted.
+
+Elapsed: 00:00:02.178
+
+Commit complete.
+
+TITLE                                   CHUNKS    AVG_CHARACTERS
+____________________________________ _________ _________________
+Atlas CRM 8.4 Administrator Guide           14               459
+Atlas Billing 5.2 User Guide                10               456
+Atlas Mobile 3.9 Guide                       5               463
+Atlas Connect API FAQ                        5               457
+Atlas Sync FAQ                               4               418
+Atlas CRM 8.4.1                              2               365
+Atlas Mobile 3.9.1                           2               265
+Atlas Analytics 6.1                          2               312
+
+8 rows selected.

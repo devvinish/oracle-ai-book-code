@@ -1,0 +1,14 @@
+PL/SQL procedure successfully completed.
+
+   CLUSTER_ID    TICKETS
+_____________ __________
+            3         21
+            5         14
+            7         16
+            9         32
+           11         72
+           13         58
+           14         93
+           15         94
+
+8 rows selected.

@@ -1,0 +1,6 @@
+Function GENERATE_SQL compiled
+
+GENERATED_SQL
+__________________________________________________________________________________________________
+SELECT p.NAME, COUNT(t.TICKET_ID) AS OPEN_TICKETS FROM PRODUCTS p LEFT JOIN TICKETS t ON
+p.PRODUCT_ID = t.PRODUCT_ID AND t.STATUS = 'Open' GROUP BY p.NAME

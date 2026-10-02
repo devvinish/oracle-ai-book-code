@@ -1,0 +1,13 @@
+SPARSE_VECTOR                     AS_DENSE
+_________________________________ ______________________________________
+[10,[2,7],[5.0E-001,2.5E-001]]    [0,0,5.0E-001,0,0,0,0,2.5E-001,0,0]
+
+Error starting at line : 7
+In command -
+select vector_distance(to_vector('[10, [2, 7], [0.5, 0.25]]', 10, float32, sparse),
+                       to_vector('[0, 0.5, 0, 0, 0, 0, 0.25, 0, 0, 0]', 10, float32)) as d
+from   dual
+Error at Command Line : 7 Column : 8
+Error report -
+SQL Error: ORA-51834: Distance computation between sparse and dense vector is not
+supported.

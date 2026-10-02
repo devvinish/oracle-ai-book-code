@@ -1,0 +1,13 @@
+Table CHUNK_TRIALS created.
+
+347 rows inserted.
+
+Commit complete.
+
+   MAX_WORDS    ANSWER_FIRST    ANSWER_IN_TOP_3    CHARACTERS_IN_TOP_3
+____________ _______________ __________________ ______________________
+          30              10                 12                    343
+          50              10                 12                    560
+         100              13                 13                   1298
+         200              11                 13                   2383
+         400               6                 10                   3678

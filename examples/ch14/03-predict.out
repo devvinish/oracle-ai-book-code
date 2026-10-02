@@ -1,0 +1,13 @@
+   TICKETS    CLASSIFIER_RIGHT    LLM_RIGHT
+__________ ___________________ ____________
+       100                 100           86
+
+Elapsed: 00:00:00.233
+
+   TICKET_ID CATEGORY           PREDICTED             PROBABILITY
+____________ __________________ __________________ ______________
+           4 Question           Question                     0.61
+           8 Question           Question                     0.59
+          12 Feature Request    Feature Request              0.63
+          16 Question           Question                     0.58
+          20 Question           Question                     0.58

@@ -1,0 +1,5 @@
+ARTICLE_ID    TITLE                                      SCORE    VECTOR_SCORE    TEXT_SCORE
+_____________ _______________________________________ ________ _______________ _____________
+KB-602        API rate limits                            55.48           55.93            51
+KB-201        Duplicate charges and refunds              53.88           56.67            26
+KB-601        Webhooks are disabled after failures       52.89           55.58            26

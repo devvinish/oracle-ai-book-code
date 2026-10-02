@@ -1,0 +1,29 @@
+(index default)
+  exact:         57.0 ms per query
+  approximate:    1.0 ms per query, 100% of the right results
+
+PL/SQL procedure successfully completed.
+
+with target accuracy parameters (efsearch 10)
+  exact:         57.7 ms per query
+  approximate:    0.3 ms per query, 79% of the right results
+
+PL/SQL procedure successfully completed.
+
+with target accuracy parameters (efsearch 50)
+  exact:         56.0 ms per query
+  approximate:    0.4 ms per query, 92% of the right results
+
+PL/SQL procedure successfully completed.
+
+with target accuracy parameters (efsearch 200)
+  exact:         55.4 ms per query
+  approximate:    0.7 ms per query, 100% of the right results
+
+PL/SQL procedure successfully completed.
+
+with target accuracy parameters (efsearch 1000)
+  exact:         57.1 ms per query
+  approximate:    1.5 ms per query, 100% of the right results
+
+PL/SQL procedure successfully completed.

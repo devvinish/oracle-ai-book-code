@@ -1,0 +1,6 @@
+   REPLY_ID    TICKET_ID AGENT     STATUS         KEPT_PERCENT    DRAFT_CHARS    SENT_CHARS
+___________ ____________ _________ ___________ _______________ ______________ _____________
+          1            9 EMMA      Not sent                               259
+         23            9 EMMA      Sent                     88            244           267
+         24           85 DANIEL    Not sent                               542
+         25           85 DANIEL    Sent                     37            502           500

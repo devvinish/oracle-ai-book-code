@@ -1,0 +1,15 @@
+Question 1: Why was my card charged twice this month?
+Outcome: Answered
+Answer: A duplicate charge usually happens when the payment gateway times out or does not answer
+        in time, causing the charge to be retried [1, 2]. In rare cases, both the original charge
+        and the retry succeed, resulting in you being charged twice [2].
+
+Question 2: Can I pay my invoices with PayPal?
+Outcome: Not found
+Answer: I could not find this in the Atlas knowledge base.
+
+Question 3: What is the capital of France?
+Outcome: Off topic
+Answer: I can only answer questions about Atlas products and services.
+
+PL/SQL procedure successfully completed.

@@ -1,0 +1,6 @@
+HANDOVER
+__________________________________________________________________________________________________
+The customer was accidentally billed twice for the same invoice due to a payment gateway timeout
+retry. The agent refunded the duplicate charge and provided knowledge base article KB-201, noting
+that the refund should appear in 5 to 10 business days. The ticket remains open to confirm that
+the customer successfully receives the refund within the expected timeframe.

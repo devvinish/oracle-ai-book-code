@@ -1,0 +1,20 @@
+Table NEW_TICKETS created.
+
+8 rows inserted.
+
+Commit complete.
+
+Function LLM_CATEGORY compiled
+
+   N CATEGORY           CLASSIFIER            PROBABILITY LLM
+____ __________________ __________________ ______________ __________________
+   1 Question           Question                      0.4 Question
+   2 Bug                Account                       0.4 Bug
+   3 Feature Request    Feature Request              0.65 Feature Request
+   4 Billing            Billing                      0.47 Billing
+   5 Account            Account                      0.58 Bug
+   6 Bug                Bug                          0.59 Bug
+   7 Billing            Billing                      0.39 Billing
+   8 Feature Request    Question                      0.5 Feature Request
+
+8 rows selected.

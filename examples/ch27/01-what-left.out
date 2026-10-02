@@ -1,0 +1,5 @@
+MODEL             CALLS    PROMPT_KB FIRST_CALL
+______________ ________ ____________ _______________________
+GEMINI              237          481 02-OCT-2026 07:41:52
+LLAMA_LOCAL         134           90 02-OCT-2026 08:22:15
+GEMINI_LITE          13            5 02-OCT-2026 07:49:25

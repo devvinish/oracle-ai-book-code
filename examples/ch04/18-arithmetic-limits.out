@@ -1,0 +1,15 @@
+Error starting at line : 1
+In command -
+select vector('[1, 2, 3]') * 2 from dual
+Error at Command Line : 1 Column : 30
+Error report -
+SQL Error: ORA-00932: expression is of data type NUMBER, which is incompatible with
+expected data type VECTOR
+
+Error starting at line : 3
+In command -
+select vector('[3, 4, 0]') / vector('[1, 2, 1]') from dual
+Error at Command Line : 3 Column : 28
+Error report -
+SQL Error: ORA-03001: unimplemented feature
+ORA-00722: Feature "Dimension-wise vector division"

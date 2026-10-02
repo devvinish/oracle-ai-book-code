@@ -1,0 +1,9 @@
+Function CHECK_SQL compiled
+
+STATEMENT                                    RESULT
+____________________________________________ _____________________________________________________
+select count(*) from tickets                 allowed
+delete from tickets                          not a query
+select prompt from llm_calls                 uses tables not allowed: LLM_CALLS
+select * from tickets; drop table tickets    more than one statement
+select no_such_column from tickets           invalid SQL: ORA-00904: "NO_SUCH_COLUMN": invalid

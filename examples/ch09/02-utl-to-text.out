@@ -1,0 +1,35 @@
+   DOC_ID DOC_TYPE            CHARACTERS
+_________ ________________ _____________
+        1 Manual                    6476
+        2 Manual                    4599
+        3 Manual                    2336
+        4 FAQ                       2303
+        5 FAQ                       1690
+        6 Release notes              739
+        7 Release notes              539
+        8 Release notes              634
+
+8 rows selected.
+
+TEXT
+__________________________________________________________________________________________________
+
+Atlas Mobile 3.9.1 Release Notes
+
+Atlas Mobile 3.9.1 Release Notes
+
+Released
+
+Atlas Mobile 3.9.1 was released on 2 September 2026 in the App Store and Google Play. Updates can
+take up to 48 hours to reach every device.
+
+Fixed
+
+The app no longer crashes on startup when the offline data is larger than 2 GB.
+
+Invoices created offline no longer lose their line discounts when they are uploaded.
+
+Improved
+
+Offline downloads are about 40 percent smaller, because attachments are now downloaded only when
+you open them.

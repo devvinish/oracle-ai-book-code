@@ -1,0 +1,14 @@
+TABLE_NAME         COMMENTS
+__________________ ___________________________________________________________________________
+AGENTS             The support agents of Atlas Support
+CUSTOMERS          Companies that use Atlas products, with their main contact
+KB_ARTICLES        Knowledge base: short help articles that answer common questions
+PRODUCTS           The six software products of Atlas Software
+TICKETS            Support requests: what the customer wrote, priority, status, and outcome
+TICKET_COMMENTS    The conversation of each ticket after the first message
+
+6 rows selected.
+
+   PRODUCTS    CUSTOMERS    AGENTS    TICKETS    COMMENTS    ARTICLES
+___________ ____________ _________ __________ ___________ ___________
+          6           40         8        400         476          24

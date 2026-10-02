@@ -1,0 +1,15 @@
+Procedure EMBED_PENDING compiled
+
+1 row inserted.
+
+Commit complete.
+
+Tickets embedded: 1
+
+PL/SQL procedure successfully completed.
+
+   TICKET_ID    MINILM    GEMINI
+____________ _________ _________
+        9002       384      3072
+
+PL/SQL procedure successfully completed.

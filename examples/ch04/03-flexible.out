@@ -1,0 +1,13 @@
+Table EMBEDDINGS_ANY created.
+
+1 row inserted.
+
+1 row inserted.
+
+1 row inserted.
+
+   ID MODEL               DIMS FORMAT
+_____ ________________ _______ __________
+    1 topic scores           3 FLOAT32
+    2 small model            5 INT8
+    3 another model          2 FLOAT64

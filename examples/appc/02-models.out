@@ -1,0 +1,11 @@
+NAME                                 CAPABILITIES
+____________________________________ __________________________________
+models/gemini-flash-latest           ["chat","summarize","generate"]
+models/gemini-flash-lite-latest      ["chat","summarize","generate"]
+models/gemini-pro-latest             ["chat","summarize","generate"]
+models/antigravity-preview-latest    ["chat","summarize","generate"]
+models/gemini-embedding-001          ["embed"]
+models/gemini-embedding-2-preview    ["embed"]
+models/gemini-embedding-2            ["embed"]
+
+7 rows selected.

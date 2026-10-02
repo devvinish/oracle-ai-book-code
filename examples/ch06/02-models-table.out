@@ -1,0 +1,10 @@
+Table EMBEDDING_MODELS created.
+
+2 rows inserted.
+
+Commit complete.
+
+NAME         DIMENSIONS PROVIDER    MODEL
+_________ _____________ ___________ _______________________
+MINILM              384 database    ALL_MINILM_L12_V2
+GEMINI             3072 googleai    gemini-embedding-001

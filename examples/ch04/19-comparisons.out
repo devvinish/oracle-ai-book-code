@@ -1,0 +1,23 @@
+Error starting at line : 1
+In command -
+select count(*) from article_topics where topics = vector('[0.90, 0.05, 0.30]')
+Error at Command Line : 1 Column : 43
+Error report -
+SQL Error: ORA-22848: cannot use VECTOR type as comparison key
+
+Error starting at line : 3
+In command -
+select article_id from article_topics order by topics
+Error at Command Line : 3 Column : 48
+Error report -
+SQL Error: ORA-22848: cannot use VECTOR type as comparison key
+
+Error starting at line : 5
+In command -
+create index article_topics_ix on article_topics (topics)
+Error report -
+ORA-02327: cannot create index on expression with data type VECTOR
+
+ARTICLE_ID
+_____________
+KB-101

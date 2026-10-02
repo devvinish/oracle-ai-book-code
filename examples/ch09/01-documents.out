@@ -1,0 +1,18 @@
+Table ATLAS_DOCUMENTS created.
+
+8 rows inserted.
+
+Commit complete.
+
+   DOC_ID FILE_NAME                                 DOC_TYPE            BYTES
+_________ _________________________________________ ________________ ________
+        1 atlas-crm-admin-guide.pdf                 Manual              49587
+        2 atlas-billing-user-guide.pdf              Manual              44732
+        3 atlas-mobile-guide.pdf                    Manual              41506
+        4 atlas-connect-api-faq.docx                FAQ                  5911
+        5 atlas-sync-faq.docx                       FAQ                  5167
+        6 atlas-crm-8.4.1-release-notes.html        Release notes         985
+        7 atlas-mobile-3.9.1-release-notes.html     Release notes         779
+        8 atlas-analytics-6.1-release-notes.html    Release notes         883
+
+8 rows selected.

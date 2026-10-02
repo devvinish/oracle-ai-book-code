@@ -1,0 +1,11 @@
+AGENT_CATEGORY     AI_CATEGORY           TICKETS
+__________________ __________________ __________
+Account            Question                   12
+Billing            Question                    9
+Account            Bug                         9
+Question           Bug                         8
+Question           Feature Request             6
+Feature Request    Question                    4
+Bug                Question                    4
+
+7 rows selected.

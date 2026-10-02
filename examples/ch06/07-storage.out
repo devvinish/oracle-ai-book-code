@@ -1,0 +1,5 @@
+COLUMN_NAME                MB
+______________________ ______
+EMBEDDING                 0.3
+GEMINI_EMBEDDING          8.3
+TICKETS (the table)         2

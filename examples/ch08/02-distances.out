@@ -1,0 +1,4 @@
+DISTANCE_OF                 LOWEST    AVERAGE    HIGHEST
+________________________ _________ __________ __________
+right article                0.256       0.46      0.749
+nearest wrong article         0.45      0.671      0.812

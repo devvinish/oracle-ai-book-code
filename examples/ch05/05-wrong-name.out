@@ -1,0 +1,13 @@
+Error starting at line : 1
+In command -
+select vector_embedding(all_minilm_l12_v2 using 'I cannot sign in' as text) from dual
+Error at Command Line : 1 Column : 82
+Error report -
+SQL Error: ORA-54421: Missing mining attribute: DATA
+
+Error starting at line : 3
+In command -
+select vector_embedding(minilm using 'I cannot sign in' as data) from dual
+Error at Command Line : 3 Column : 71
+Error report -
+SQL Error: ORA-40284: model does not exist

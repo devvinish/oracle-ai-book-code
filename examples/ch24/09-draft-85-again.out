@@ -1,0 +1,17 @@
+Hello Omar,
+
+On your Enterprise plan, the REST API limit is 3,000 requests per minute. When this limit is
+exceeded, the API returns a 429 status code along with a Retry-After header that specifies how
+many seconds to wait before retrying.
+
+To help prevent hitting this limit, you can use our bulk endpoints, which accept up to 100 records
+per call and count as a single request, and make sure your sync honors the Retry-After header. You
+can find more details in article KB-602.
+
+Please let us know if you have any other questions.
+
+Daniel Okafor
+
+Kept: 50%
+
+PL/SQL procedure successfully completed.

@@ -1,0 +1,10 @@
+Table LLM_MODELS created.
+
+2 rows inserted.
+
+Commit complete.
+
+NAME           MODEL                                       THINKING
+______________ ___________________________________________ ___________
+GEMINI         gemini-flash-latest:generateContent         Yes
+GEMINI_LITE    gemini-flash-lite-latest:generateContent    No

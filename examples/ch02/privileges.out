@@ -1,0 +1,15 @@
+ROLE
+____________________
+CTXAPP
+DB_DEVELOPER_ROLE
+RESOURCE
+SODA_APP
+
+PRIVILEGE
+______________________
+CREATE CREDENTIAL
+CREATE MINING MODEL
+
+HOST                                 PRIVILEGE
+____________________________________ ____________
+generativelanguage.googleapis.com    HTTP

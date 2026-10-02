@@ -1,0 +1,41 @@
+Error starting at line : 1
+In command -
+select generate('Name one color. Answer with one word.',
+                p_options => json('{"generationConfig": {"maxOutputTokens": 20}}'))
+         as answer
+from   dual
+Error at Command Line : 1 Column : 8
+Error report -
+SQL Error: ORA-20000: Oracle Text error:
+DRG-50857: oracle error in dbms_vector_chain.utl_to_generate_text
+ORA-20002: The provider returned an error: {
+  "candidates": [
+    {
+      "content": {},
+      "finishReason": "MAX_TOKENS",
+      "index": 0
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 9,
+    "totalTokenCount": 25,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 9
+      }
+    ],
+    "thoughtsTokenCount": 16,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-3.8-flash",
+  "responseId": "z2y_avbgKPWHjuMP6Ymf4Qg"
+}
+ORA-06512: at "CTXSYS.DRUE", line 192
+ORA-06512: at "CTXSYS.DBMS_VECTOR_CHAIN", line 1012
+ORA-06512: at "ATLAS.GENERATE", line 14
+ORA-06512: at line 1
+
+ANSWER
+_________
+Blue

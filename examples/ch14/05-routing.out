@@ -1,0 +1,12 @@
+   N CATEGORY           ANSWER             DECIDED_BY
+____ __________________ __________________ _________________
+   1 Question           Question           language model
+   2 Bug                Bug                language model
+   3 Feature Request    Feature Request    classifier
+   4 Billing            Billing            language model
+   5 Account            Account            classifier
+   6 Bug                Bug                classifier
+   7 Billing            Billing            language model
+   8 Feature Request    Feature Request    language model
+
+8 rows selected.

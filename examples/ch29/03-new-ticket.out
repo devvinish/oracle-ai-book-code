@@ -1,0 +1,18 @@
+1 row inserted.
+
+Commit complete.
+
+   TICKET_ID AI_CATEGORY       GEMINI
+____________ ______________ _________
+        9004
+
+PL/SQL procedure successfully completed.
+
+AI_CATEGORY    AI_SUMMARY                                                           GEMINI
+______________ _________________________________________________________________ _________
+Bug            Deals board is empty and displays a continuous spinning wheel.         3072
+
+AT          TASK                STATUS       DONE
+___________ ___________________ _________ _______
+08:58:04    EMBED_PENDING       Done            1
+08:58:06    CLASSIFY_TICKETS    Done            1

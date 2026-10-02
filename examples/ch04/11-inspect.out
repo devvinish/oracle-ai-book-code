@@ -1,0 +1,10 @@
+ARTICLE_ID       DIMS FORMAT          NORM
+_____________ _______ __________ _________
+KB-101              3 FLOAT32         0.95
+KB-105              3 FLOAT32       0.9407
+KB-201              3 FLOAT32       0.9605
+KB-203              3 FLOAT32       0.9233
+KB-301              3 FLOAT32       0.9566
+KB-401              3 FLOAT32       0.9124
+
+6 rows selected.

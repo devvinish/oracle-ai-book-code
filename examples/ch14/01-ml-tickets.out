@@ -1,0 +1,6 @@
+Table ML_TICKETS created.
+
+DATA_SET       TICKETS
+___________ __________
+Test               100
+Train              300

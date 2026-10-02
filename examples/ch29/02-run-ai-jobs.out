@@ -1,0 +1,7 @@
+Procedure RUN_AI_JOBS compiled
+
+PL/SQL procedure successfully completed.
+
+JOB_NAME         ENABLED    STATE        REPEAT_INTERVAL
+________________ __________ ____________ ____________________________
+ATLAS_AI_JOBS    TRUE       SCHEDULED    FREQ=MINUTELY; INTERVAL=1

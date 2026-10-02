@@ -1,0 +1,15 @@
+PL/SQL procedure successfully completed.
+
+   QUESTION_ID ASKED_BY    OUTCOME      QUESTION
+______________ ___________ ____________ __________________________________________________________
+             4 KESTREL     Not found    How do I reset my password if the e-mail never arrives?
+             5 WILLOW      Not found    Is there a dark mode in Atlas Mobile?
+             6 WILLOW      Answered     Can I pay by bank transfer instead of a card?
+             7 MERIDIAN    Answered     How do I import contacts from an Excel file?
+             8 MERIDIAN    Answered     My scheduled report did not arrive this morning.
+             9 KITE        Not found    Does Atlas CRM have an add-in for Outlook?
+            10 KITE        Answered     How many API calls can I make per minute?
+            11 SAFFRON     Not found    Can I pay with PayPal?
+            12 SAFFRON     Answered     Can our invoices show our purchase order number?
+
+9 rows selected.

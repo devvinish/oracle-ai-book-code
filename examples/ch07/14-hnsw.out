@@ -1,0 +1,9 @@
+Index TICKET_ARCHIVE_IVF dropped.
+
+Vector INDEX created.
+
+Elapsed: 00:00:31.047
+
+INDEX_NAME             INDEX_TYPE    INDEX_SUBTYPE                   STATUS
+______________________ _____________ _______________________________ _________
+TICKET_ARCHIVE_HNSW    VECTOR        INMEMORY_NEIGHBOR_GRAPH_HNSW    VALID

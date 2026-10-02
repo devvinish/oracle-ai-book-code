@@ -1,0 +1,6 @@
+SQL:    SELECT c.PLAN, AVG(t.SATISFACTION) AS AVERAGE_SATISFACTION FROM CUSTOMERS c JOIN TICKETS t
+        ON c.CUSTOMER_ID = t.CUSTOMER_ID WHERE t.STATUS = 'Closed' GROUP BY c.PLAN
+Answer: The average satisfaction of closed tickets is approximately 4.29 for the Basic plan, 4 for
+        the Enterprise plan, and 3.90 for the Professional plan.
+
+PL/SQL procedure successfully completed.

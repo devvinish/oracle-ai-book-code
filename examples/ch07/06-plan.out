@@ -1,0 +1,23 @@
+Explained.
+
+OPERATION                                        OBJECT_NAME
+________________________________________________ __________________________________________
+SELECT STATEMENT
+  VIEW
+    NESTED LOOPS
+      VIEW                                       VW_IVPSR_11E7D7DE
+        COUNT STOPKEY
+          VIEW                                   VW_IVPSJ_578B79F1
+            SORT ORDER BY STOPKEY
+              HASH JOIN
+                PART JOIN FILTER CREATE          :BF0000
+                  VIEW                           VW_IVCR_B5B87E67
+                    COUNT STOPKEY
+                      VIEW                       VW_IVCN_9A1D2119
+                        SORT ORDER BY STOPKEY
+                          TABLE ACCESS FULL      VECTOR$...$IVF_FLAT_CENTROIDS
+                PARTITION LIST JOIN-FILTER
+                  TABLE ACCESS FULL              VECTOR$...$IVF_FLAT_CENTROID_PARTITIONS
+      TABLE ACCESS BY USER ROWID                 TICKET_ARCHIVE
+
+17 rows selected.

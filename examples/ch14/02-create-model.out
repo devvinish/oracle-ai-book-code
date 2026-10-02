@@ -1,0 +1,5 @@
+PL/SQL procedure successfully completed.
+
+MODEL_NAME      MINING_FUNCTION    ALGORITHM                     BUILD_SECONDS
+_______________ __________________ __________________________ ________________
+CATEGORY_SVM    CLASSIFICATION     SUPPORT_VECTOR_MACHINES                   1

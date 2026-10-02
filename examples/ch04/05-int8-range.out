@@ -1,0 +1,7 @@
+Error starting at line : 1
+In command -
+select vector('[1.6, -2.4, 300]', 3, int8) from dual
+Error at Command Line : 1 Column : 8
+Error report -
+SQL Error: ORA-51806: Vector dimension value at position 2 is outside the range allowed by
+the dimension format FLEX.

@@ -1,0 +1,10 @@
+PRODUCT               TICKETS    NEGATIVE    NEGATIVE_PCT
+__________________ __________ ___________ _______________
+Atlas Analytics            83          44              53
+Atlas CRM                  58          30              52
+Atlas Billing              84          43              51
+Atlas Mobile               61          29              48
+Atlas Sync                 45          19              42
+Atlas Connect              69          28              41
+
+6 rows selected.

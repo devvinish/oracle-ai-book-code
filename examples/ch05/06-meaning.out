@@ -1,0 +1,23 @@
+Table SENTENCES created.
+
+1 row inserted.
+
+1 row inserted.
+
+1 row inserted.
+
+1 row inserted.
+
+1 row inserted.
+
+5 rows updated.
+
+Commit complete.
+
+   ID TEXT                                             FROM_SIGN_IN    FROM_BILLED_TWICE
+_____ _____________________________________________ _______________ ____________________
+    1 I cannot sign in to my account                              0                0.851
+    2 Login keeps saying invalid credentials                  0.358                0.818
+    3 We were billed twice this month                         0.851                    0
+    4 Our card shows two identical payments                   0.811                 0.45
+    5 The mobile app closes right after it opens              0.765                0.949
