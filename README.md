@@ -6,6 +6,12 @@ produced in Oracle AI Database 26ai Free (release 23.26) with Oracle APEX 26.1, 
 install the book's sample schema, **Atlas Support**, a software company's help desk, and the
 finished APEX application.
 
+## The Book
+
+- **Paperback** on Amazon: [amazon.com/dp/B0HLXFCF1G](https://www.amazon.com/dp/B0HLXFCF1G) — 409 pages, 7.5 x 9.25 in, ISBN 9798178836798
+- **Kindle edition** on Amazon: [amazon.com/dp/B0HLXN2BD4](https://www.amazon.com/dp/B0HLXN2BD4)
+- **Author:** [Vinish Kapoor](https://www.amazon.com/author/vinish-kapoor) · [vinish.dev](https://vinish.dev)
+
 ## Contents
 
 - `setup/atlas/` — the ATLAS schema: `create-user.sql` (run as a DBA), `install.sql` (run as ATLAS:
