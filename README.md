@@ -77,6 +77,18 @@ uses workspace components that an export doesn't contain; create them first, as 
   with your web credential, and
 - the vector provider **Atlas MiniLM** (static ID `atlas-minilm`), of the type Database ONNX Model.
 
+`apex/f250.sql`, **Atlas KB Admin** (Chapter 22), needs only the tables of `setup/atlas/install.sql`.
+Import it with **Install Supporting Objects** on (click **Next** on the Credentials page): the import
+gives you, the developer who imports it, the **Administrator** role. Other users of the workspace can
+open it and view the data; to change data, they need the **Contributor** or **Administrator** role in
+**Shared Components › Application Access Control**.
+
+Both applications import into any Oracle APEX 26.1 workspace, including apex.oracle.com. The AI
+features of Atlas Support, though, need what the lab of Chapter 2 sets up as a DBA: an embedding
+model loaded into the database from a folder on the database server, and network access from the
+database to the AI provider. On a hosted service such as apex.oracle.com you may not be able to do
+either, so use the lab for the AI chapters.
+
 ## Examples by Chapter
 
 | Folder | Chapter | Examples |

@@ -65,6 +65,7 @@ prompt APPLICATION 250 - Atlas KB Admin
 --       Reports:
 --       E-Mail:
 --     Supporting Objects:  Included
+--       Install scripts:          1
 --   Version:         26.1.0
 --   Instance ID:     2600172728634599
 --
@@ -861,7 +862,7 @@ begin
 wwv_flow_imp_shared.create_app_setting(
  p_id=>wwv_flow_imp.id(14832525441075711)
 ,p_name=>'ACCESS_CONTROL_SCOPE'
-,p_value=>'ACL_ONLY'
+,p_value=>'ALL_USERS'
 ,p_is_required=>'N'
 ,p_valid_values=>'ACL_ONLY, ALL_USERS'
 ,p_on_upgrade_keep_value=>true
@@ -4050,17 +4051,45 @@ end;
 /
 prompt --application/deployment/definition
 begin
-null;
+wwv_flow_imp.g_varchar2_table := wwv_flow_imp.empty_varchar2_table;
+wwv_flow_imp.g_varchar2_table(1) := '-- The application has no database objects of its own to remove.'||chr(10);
+wwv_flow_imp_shared.create_install(
+ p_id=>wwv_flow_imp.id(39911000000000000)
+,p_welcome_message=>'This gives you the roles of Atlas KB Admin, the application of the book AI Applications with Oracle Database 26ai and APEX 26.1.'
+,p_install_success_message=>'Atlas KB Admin is ready. Run the application and sign in with your workspace user name and password.'
+,p_install_failure_message=>'Some supporting objects could not be installed; see the README of the book''s code repository. You can give yourself access in Shared Components > Application Access Control.'
+,p_deinstall_success_message=>'Atlas KB Admin was removed.'
+,p_deinstall_script_clob=>wwv_flow_imp.varchar2_to_clob(wwv_flow_imp.g_varchar2_table)
+);
 end;
 /
-prompt --application/deployment/checks
+prompt --application/deployment/install/install_access_for_the_installing_developer
 begin
-null;
-end;
-/
-prompt --application/deployment/buildoptions
-begin
-null;
+wwv_flow_imp.g_varchar2_table := wwv_flow_imp.empty_varchar2_table;
+wwv_flow_imp.g_varchar2_table(1) := '-- Gives the developer who installs the application its roles (ADMINISTRATOR).'||chr(10);
+wwv_flow_imp.g_varchar2_table(2) := 'declare'||chr(10);
+wwv_flow_imp.g_varchar2_table(3) := '    l_app  number := wwv_flow_application_install.get_application_id;'||chr(10);
+wwv_flow_imp.g_varchar2_table(4) := '    l_user varchar2(255) := coalesce(sys_context(''APEX$SESSION'', ''APP_USER''), v(''APP_USER''));'||chr(10);
+wwv_flow_imp.g_varchar2_table(5) := 'begin'||chr(10);
+wwv_flow_imp.g_varchar2_table(6) := '    if l_app is not null and l_user is not null and upper(l_user) <> ''NOBODY'' then'||chr(10);
+wwv_flow_imp.g_varchar2_table(7) := '        for r in (select role_id from apex_appl_acl_roles'||chr(10);
+wwv_flow_imp.g_varchar2_table(8) := '                   where application_id = l_app'||chr(10);
+wwv_flow_imp.g_varchar2_table(9) := '                     and upper(role_static_id) in (''ADMINISTRATOR'')'||chr(10);
+wwv_flow_imp.g_varchar2_table(10) := '                     and role_id not in (select role_id from apex_appl_acl_user_roles'||chr(10);
+wwv_flow_imp.g_varchar2_table(11) := '                                          where application_id = l_app and user_name = upper(l_user))) loop'||chr(10);
+wwv_flow_imp.g_varchar2_table(12) := '            apex_acl.add_user_role(p_application_id => l_app, p_user_name => l_user, p_role_id => r.role_id);'||chr(10);
+wwv_flow_imp.g_varchar2_table(13) := '        end loop;'||chr(10);
+wwv_flow_imp.g_varchar2_table(14) := '    end if;'||chr(10);
+wwv_flow_imp.g_varchar2_table(15) := 'end;'||chr(10);
+wwv_flow_imp.g_varchar2_table(16) := '/'||chr(10);
+wwv_flow_imp_shared.create_install_script(
+ p_id=>wwv_flow_imp.id(39911000000000001)
+,p_install_id=>wwv_flow_imp.id(39911000000000000)
+,p_name=>'Access for the installing developer'
+,p_sequence=>10
+,p_script_type=>'INSTALL'
+,p_script_clob=>wwv_flow_imp.varchar2_to_clob(wwv_flow_imp.g_varchar2_table)
+);
 end;
 /
 prompt --application/end_environment
