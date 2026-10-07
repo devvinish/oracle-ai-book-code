@@ -69,25 +69,42 @@ the book's.
 
 ## Installing the APEX Applications
 
-Import `apex/f200.sql` into a workspace whose schema is ATLAS (**App Builder › Import**), after
-running the examples of Parts II to IV, which create the database objects it uses. The application
-uses workspace components that an export doesn't contain; create them first, as Chapter 16 shows:
+| Application | APEX Cloud (apex.oracle.com, OCI) | Local lab (Chapter 2) |
+|---|---|---|
+| `apex/f250.sql`, **Atlas KB Admin** (Chapter 22) | Import it. That's all. | Import it. That's all. |
+| `apex/f200.sql`, **Atlas Support** (Parts IV and V) | Not supported: it needs the lab. | Build it chapter by chapter, then import it (below). |
+
+### Atlas KB Admin (application 250): one import
+
+In **App Builder**, click **Import**, choose `apex/f250.sql`, click **Next** and **Import
+Application**, click **Next** on the Credentials page, and then **Install Supporting Objects**.
+Click **Run Application** and sign in with your workspace user.
+
+The import creates the six tables of the Atlas Support sample schema and their data in your
+workspace's schema, the same as `setup/atlas/install.sql`, and gives you, the developer who imports
+it, the **Administrator** role. If the schema already has any of the Atlas tables (you ran
+`install.sql` in Chapter 2, for example), they stay as they are. If you import the application
+first, skip `install.sql` later: the tables are already there.
+
+Other users of the workspace can open it and view the data; to change data, they need the
+**Contributor** or **Administrator** role in **Shared Components › Application Access Control**.
+
+### Atlas Support (application 200): the local lab only
+
+Atlas Support is the finished application of the book. It uses the database objects that the
+examples of Chapters 10 to 29 create (the `atlas_security` package of Chapter 27, for example, which
+it calls when a session starts), and AI features that need what the lab of Chapter 2 sets up as a
+DBA: an embedding model loaded into the database from a folder on the database server, and network
+access from the database to the AI provider. Hosted services such as apex.oracle.com don't allow
+either, so there it stops with *"Error processing database session setup code"*.
+
+In the lab, import `apex/f200.sql` into a workspace whose schema is ATLAS (**App Builder ›
+Import**), after running the examples of Parts II to V. The application uses workspace components
+that an export doesn't contain; create them first, as Chapter 16 shows:
 
 - the Generative AI services **Gemini** (static ID `gemini`) and **Gemini Lite** (`gemini-lite`),
   with your web credential, and
 - the vector provider **Atlas MiniLM** (static ID `atlas-minilm`), of the type Database ONNX Model.
-
-`apex/f250.sql`, **Atlas KB Admin** (Chapter 22), needs only the tables of `setup/atlas/install.sql`.
-Import it with **Install Supporting Objects** on (click **Next** on the Credentials page): the import
-gives you, the developer who imports it, the **Administrator** role. Other users of the workspace can
-open it and view the data; to change data, they need the **Contributor** or **Administrator** role in
-**Shared Components › Application Access Control**.
-
-Both applications import into any Oracle APEX 26.1 workspace, including apex.oracle.com. The AI
-features of Atlas Support, though, need what the lab of Chapter 2 sets up as a DBA: an embedding
-model loaded into the database from a folder on the database server, and network access from the
-database to the AI provider. On a hosted service such as apex.oracle.com you may not be able to do
-either, so use the lab for the AI chapters.
 
 ## Examples by Chapter
 
