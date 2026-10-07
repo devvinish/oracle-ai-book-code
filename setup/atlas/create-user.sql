@@ -1,5 +1,7 @@
--- Creates the ATLAS schema of the book. Run as a DBA in the PDB (FREEPDB1):
---   sqlplus system@localhost:1521/FREEPDB1 @create-user.sql <password>
+-- Creates the ATLAS schema of the book. Run as SYS in the PDB (FREEPDB1):
+--   sql sys@localhost:1521/FREEPDB1 as sysdba @create-user.sql <password>
+-- (Not as SYSTEM, as the first printing of Chapter 2 says: SYSTEM may not grant EXECUTE on the
+-- vector packages and UTL_HTTP, and five grants fail with ORA-01031. See Errata in the README.)
 -- The password is the first argument; choose your own.
 create user atlas identified by "&1"
   default tablespace users quota unlimited on users;

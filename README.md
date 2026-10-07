@@ -16,7 +16,7 @@ finished APEX application.
 
 ## Contents
 
-- `setup/atlas/` — the ATLAS schema: `create-user.sql` (run as a DBA), `install.sql` (run as ATLAS:
+- `setup/atlas/` — the ATLAS schema: `create-user.sql` (run as SYS), `install.sql` (run as ATLAS:
   products, customers, agents, tickets, comments, and knowledge base articles), `uninstall.sql`,
   `archive.sql` (the 50,000 archived tickets of Chapter 7), and `documents/`, the library of
   manuals, FAQs, and release notes (PDF, Word, and HTML) that Chapter 9 loads.
@@ -27,12 +27,27 @@ finished APEX application.
   and `apex/f250.sql`, the application **Atlas KB Admin** that Chapter 22 creates from a
   description.
 
+## Errata
+
+- **Chapter 2, "The ATLAS Schema":** run `create-user.sql` as **SYS**, not as SYSTEM:
+
+  ```bash
+  sql sys@localhost:1521/FREEPDB1 as sysdba @create-user.sql 'Your_Atlas_Password1'
+  ```
+
+  As SYSTEM, five grants fail with *ORA-01031: insufficient privileges*: SYSTEM may not grant
+  `EXECUTE` on `DBMS_VECTOR`, `DBMS_VECTOR_CHAIN`, `DBMS_HYBRID_VECTOR`, `DBMS_DATA_MINING`, and
+  `UTL_HTTP`, and the examples that need them fail later. If you ran the script as SYSTEM
+  already, connect as SYS and run it again: it reports that the user ATLAS exists (*ORA-01920*, which you can ignore),
+  leaves the user as it is, and gives the missing grants. The book's examples ran as SYS.
+
 ## Installing the Sample Schema
 
 Chapter 2 of the book describes the lab. In short, with the database container of Chapter 2:
 
-1. Connect to the pluggable database as a DBA and run `setup/atlas/create-user.sql` with a
-   password for ATLAS: `sql system@localhost:1521/FREEPDB1 @create-user.sql 'Your_Atlas_Password1'`.
+1. Connect to the pluggable database as SYS and run `setup/atlas/create-user.sql` with a
+   password for ATLAS: `sql sys@localhost:1521/FREEPDB1 as sysdba @create-user.sql 'Your_Atlas_Password1'`
+   (not as SYSTEM; see [Errata](#errata)).
 2. Connect as ATLAS from the folder `setup/atlas` and run `install.sql`.
 3. For the embedding examples (Chapter 5), download Oracle's prebuilt
    `all_MiniLM_L12_v2_augmented.zip` (linked from the *AI Vector Search User's Guide*), unzip it, and
