@@ -72,7 +72,7 @@ the book's.
 | Application | APEX Cloud (apex.oracle.com, OCI) | Local lab (Chapter 2) |
 |---|---|---|
 | `apex/f250.sql`, **Atlas KB Admin** (Chapter 22) | Import it. That's all. | Import it. That's all. |
-| `apex/f200.sql`, **Atlas Support** (Parts IV and V) | Not supported: it needs the lab. | Build it chapter by chapter, then import it (below). |
+| `apex/f200.sql`, **Atlas Support** (Parts IV and V) | Not supported: it needs the lab. | Run two scripts, then import it (below). |
 
 ### Atlas KB Admin (application 250): one import
 
@@ -97,20 +97,63 @@ Other users of the workspace can open it and view the data; to change data, they
 
 ### Atlas Support (application 200): the local lab only
 
-Atlas Support is the finished application of the book. It uses the database objects that the
-examples of Chapters 10 to 29 create (the `atlas_security` package of Chapter 27, for example, which
-it calls when a session starts), and AI features that need what the lab of Chapter 2 sets up as a
-DBA: an embedding model loaded into the database from a folder on the database server, and network
-access from the database to the AI provider. Hosted services such as apex.oracle.com don't allow
-either, so there it stops with *"Error processing database session setup code"*.
+Atlas Support is the finished application of the book. It needs the database objects of Chapters 5
+to 29 (the `atlas_security` package of Chapter 27, for example, which it calls when a session
+starts), an embedding model loaded into the database from a folder on the database server, and
+network access from the database to Gemini. Hosted services such as apex.oracle.com allow neither
+of the last two, so there it stops with *"Error processing database session setup code"*.
 
-In the lab, import `apex/f200.sql` into a workspace whose schema is ATLAS (**App Builder ›
-Import**), after running the examples of Parts II to V. The application uses workspace components
-that an export doesn't contain; create them first, as Chapter 16 shows:
+In the lab of Chapter 2 (the container `db26ai`, with APEX), you don't have to work through the book
+first: the scripts of `setup/app200` install everything the application needs, in the version the
+book ends with. They skip what is already there, so they also run in a schema where you ran the
+examples, and you can run them again.
 
-- the Generative AI services **Gemini** (static ID `gemini`) and **Gemini Lite** (`gemini-lite`),
-  with your web credential, and
-- the vector provider **Atlas MiniLM** (static ID `atlas-minilm`), of the type Database ONNX Model.
+1. **The model and the documents.** Download `all_MiniLM_L12_v2_augmented.zip` from the link in
+   Oracle's *AI Vector Search User's Guide* (section on importing pretrained ONNX models; Chapter 5)
+   and unzip it. Then, from the folder of this repository:
+
+   ```bash
+   docker exec db26ai mkdir -p /opt/oracle/atlas_files
+   docker cp <unzipped folder>/all_MiniLM_L12_v2.onnx db26ai:/opt/oracle/atlas_files/
+   docker cp setup/atlas/documents/. db26ai:/opt/oracle/atlas_files/
+   ```
+
+2. **As SYS**, from the folder `setup/app200`, with a password for ATLAS (used only if ATLAS
+   doesn't exist yet):
+
+   ```bash
+   sql sys@localhost:1521/FREEPDB1 as sysdba @dba.sql 'Your_Atlas_Password1'
+   ```
+
+   It creates the user ATLAS and its privileges, the network access to Gemini for ATLAS and for
+   APEX, the folder `ATLAS_FILES`, the application context of Chapter 27, and `ATLAS_READER`, the
+   user that runs the queries of Ask Your Data (Chapter 13).
+
+3. **As ATLAS**, from the same folder:
+
+   ```bash
+   sql atlas@localhost:1521/FREEPDB1 @install.sql
+   ```
+
+   It creates the Atlas tables if they aren't there, loads the model, creates the tables, functions,
+   and views of Chapters 5 to 29, loads the documents, computes the embeddings, adds the
+   classification of Chapter 11, and asks once for your Gemini API key (not shown as you type),
+   which it stores in the database credential `GEMINI_CRED`. It takes about a minute and ends with a
+   check: 400 tickets and 24 articles embedded, 9 documents, 400 tickets classified, 0 invalid
+   objects.
+
+4. **Import the application.** In a workspace whose schema is ATLAS (Chapter 2), click **App
+   Builder › Import**, choose `apex/f200.sql`, and click **Next** and **Import Application**. On the
+   Credentials page, for **Credentials for gemini**, enter `x-goog-api-key` in **Client ID or
+   Username** and your Gemini API key in **Client Secret** and **Verify Client Secret**. Click
+   **Next**.
+
+5. Click **Run Application** and sign in with your workspace user.
+
+The import also creates the workspace's Generative AI service **Gemini** and the vector provider
+**Atlas MiniLM**, if the workspace doesn't have them. To change the Gemini key later: in the database,
+run `gemini-credential.sql` as ATLAS; in APEX, **Workspace Utilities › Web Credentials › Credentials
+for gemini**.
 
 ## Examples by Chapter
 

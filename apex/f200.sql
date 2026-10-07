@@ -1910,7 +1910,6 @@ wwv_flow_imp_page.create_page_item(
  p_id=>wwv_flow_imp.id(11405962594088208)
 ,p_name=>'P3_CREATED_AT'
 ,p_source_data_type=>'TIMESTAMP'
-,p_is_required=>true
 ,p_item_sequence=>110
 ,p_item_plug_id=>wwv_flow_imp.id(11400630588088203)
 ,p_item_source_plug_id=>wwv_flow_imp.id(11400630588088203)
