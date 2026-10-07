@@ -1458,46 +1458,6 @@ wwv_flow_imp_page.create_worksheet_column(
 ,p_use_as_row_header=>'N'
 );
 wwv_flow_imp_page.create_worksheet_column(
- p_id=>wwv_flow_imp.id(14859331064075791)
-,p_db_column_name=>'EMBEDDING'
-,p_display_order=>6
-,p_column_identifier=>'F'
-,p_column_label=>'Embedding'
-,p_allow_sorting=>'N'
-,p_allow_filtering=>'N'
-,p_allow_highlighting=>'N'
-,p_allow_ctrl_breaks=>'N'
-,p_allow_aggregations=>'N'
-,p_allow_computations=>'N'
-,p_allow_charting=>'N'
-,p_allow_group_by=>'N'
-,p_allow_hide=>'N'
-,p_column_type=>'CLOB'
-,p_heading_alignment=>'LEFT'
-,p_rpt_show_filter_lov=>'N'
-,p_use_as_row_header=>'N'
-);
-wwv_flow_imp_page.create_worksheet_column(
- p_id=>wwv_flow_imp.id(14859751624075791)
-,p_db_column_name=>'GEMINI_EMBEDDING'
-,p_display_order=>7
-,p_column_identifier=>'G'
-,p_column_label=>'Gemini Embedding'
-,p_allow_sorting=>'N'
-,p_allow_filtering=>'N'
-,p_allow_highlighting=>'N'
-,p_allow_ctrl_breaks=>'N'
-,p_allow_aggregations=>'N'
-,p_allow_computations=>'N'
-,p_allow_charting=>'N'
-,p_allow_group_by=>'N'
-,p_allow_hide=>'N'
-,p_column_type=>'CLOB'
-,p_heading_alignment=>'LEFT'
-,p_rpt_show_filter_lov=>'N'
-,p_use_as_row_header=>'N'
-);
-wwv_flow_imp_page.create_worksheet_column(
  p_id=>wwv_flow_imp.id(14857710288075789)
 ,p_db_column_name=>'PRODUCT_ID'
 ,p_display_order=>2
@@ -1542,7 +1502,7 @@ wwv_flow_imp_page.create_worksheet_rpt(
 ,p_report_alias=>'primary'
 ,p_status=>'PUBLIC'
 ,p_is_default=>'Y'
-,p_report_columns=>'ARTICLE_ID:PRODUCT_ID:TITLE:BODY:EMBEDDING:GEMINI_EMBEDDING'
+,p_report_columns=>'ARTICLE_ID:PRODUCT_ID:TITLE:BODY'
 ,p_sort_column_1=>'ARTICLE_ID'
 ,p_sort_direction_1=>'ASC'
 );
@@ -1747,52 +1707,6 @@ wwv_flow_imp_page.create_page_item(
   'trim_spaces', 'BOTH')).to_clob
 );
 wwv_flow_imp_page.create_page_item(
- p_id=>wwv_flow_imp.id(14849020808075736)
-,p_name=>'P3_EMBEDDING'
-,p_data_type=>'CLOB'
-,p_source_data_type=>'CLOB'
-,p_item_sequence=>60
-,p_item_plug_id=>wwv_flow_imp.id(14846311244075732)
-,p_item_source_plug_id=>wwv_flow_imp.id(14846311244075732)
-,p_prompt=>'Embedding'
-,p_source=>'EMBEDDING'
-,p_display_as=>'NATIVE_TEXTAREA'
-,p_cSize=>60
-,p_cHeight=>4
-,p_label_alignment=>'RIGHT'
-,p_field_template=>1610598304472262251
-,p_item_template_options=>'#DEFAULT#'
-,p_is_persistent=>'N'
-,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
-  'auto_height', 'N',
-  'character_counter', 'N',
-  'resizable', 'Y',
-  'trim_spaces', 'BOTH')).to_clob
-);
-wwv_flow_imp_page.create_page_item(
- p_id=>wwv_flow_imp.id(14849490533075736)
-,p_name=>'P3_GEMINI_EMBEDDING'
-,p_data_type=>'CLOB'
-,p_source_data_type=>'CLOB'
-,p_item_sequence=>70
-,p_item_plug_id=>wwv_flow_imp.id(14846311244075732)
-,p_item_source_plug_id=>wwv_flow_imp.id(14846311244075732)
-,p_prompt=>'Gemini Embedding'
-,p_source=>'GEMINI_EMBEDDING'
-,p_display_as=>'NATIVE_TEXTAREA'
-,p_cSize=>60
-,p_cHeight=>4
-,p_label_alignment=>'RIGHT'
-,p_field_template=>1610598304472262251
-,p_item_template_options=>'#DEFAULT#'
-,p_is_persistent=>'N'
-,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
-  'auto_height', 'N',
-  'character_counter', 'N',
-  'resizable', 'Y',
-  'trim_spaces', 'BOTH')).to_clob
-);
-wwv_flow_imp_page.create_page_item(
  p_id=>wwv_flow_imp.id(14847184276075733)
 ,p_name=>'P3_PRODUCT_ID'
 ,p_source_data_type=>'NUMBER'
@@ -1854,6 +1768,32 @@ wwv_flow_imp_page.create_page_item(
 ,p_is_persistent=>'N'
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
   'value_protected', 'Y')).to_clob
+);
+wwv_flow_imp_page.create_page_computation(
+ p_id=>wwv_flow_imp.id(39922000000001001)
+,p_computation_sequence=>10
+,p_computation_item=>'P3_ARTICLE_ID'
+,p_static_id=>'p3-article-id'
+,p_computation_point=>'AFTER_SUBMIT'
+,p_computation_type=>'QUERY'
+,p_computation=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select ''KB-'' || (nvl(max(to_number(substr(article_id, 4))), 0) + 1)',
+'  from kb_articles',
+' where regexp_like(article_id, ''^KB-[0-9]+$'')'))
+,p_compute_when=>'CREATE'
+,p_compute_when_type=>'REQUEST_EQUALS_CONDITION'
+);
+wwv_flow_imp_page.create_page_computation(
+ p_id=>wwv_flow_imp.id(39922000000001002)
+,p_computation_sequence=>20
+,p_computation_item=>'P3_UPDATED_ON'
+,p_static_id=>'p3-updated-on'
+,p_computation_point=>'AFTER_SUBMIT'
+,p_computation_type=>'EXPRESSION'
+,p_computation_language=>'PLSQL'
+,p_computation=>'sysdate'
+,p_compute_when=>'CREATE,SAVE'
+,p_compute_when_type=>'REQUEST_IN_CONDITION'
 );
 wwv_flow_imp_page.create_page_process(
  p_id=>wwv_flow_imp.id(14855343157075738)
@@ -4058,7 +3998,7 @@ wwv_flow_imp_shared.create_install(
  p_id=>wwv_flow_imp.id(39911000000000000)
 ,p_welcome_message=>'This installs the Atlas Support sample schema of the book AI Applications with Oracle Database 26ai and APEX 26.1 in the parsing schema (six tables and their data), and gives you the roles of the application. If the schema already has any of the Atlas tables, the tables are left as they are.'
 ,p_install_success_message=>'Atlas KB Admin is ready. Run the application and sign in with your workspace user name and password.'
-,p_install_failure_message=>'Some supporting objects could not be installed; see the README of the book''s code repository. You can give yourself access in Shared Components > Application Access Control.'
+,p_install_failure_message=>'The Atlas Support tables could not be installed. Click Install Summary to see why: usually the schema already has a table named like one of them (CUSTOMERS, for example) from another application. Import the application into a workspace whose schema has none of the tables PRODUCTS, CUSTOMERS, AGENTS, TICKETS, TICKET_COMMENTS and KB_ARTICLES; see the README of the book''s code repository.'
 ,p_deinstall_success_message=>'Atlas KB Admin was removed. The Atlas Support tables were left.'
 ,p_deinstall_script_clob=>wwv_flow_imp.varchar2_to_clob(wwv_flow_imp.g_varchar2_table)
 );
@@ -4067,20 +4007,63 @@ end;
 prompt --application/deployment/install/install_check_the_schema
 begin
 wwv_flow_imp.g_varchar2_table := wwv_flow_imp.empty_varchar2_table;
-wwv_flow_imp.g_varchar2_table(1) := '-- Records whether the schema already has any of the Atlas Support tables (ATLAS_SETUP_SKIP):'||chr(10);
-wwv_flow_imp.g_varchar2_table(2) := '-- then the tables and data are left as they are.'||chr(10);
-wwv_flow_imp.g_varchar2_table(3) := 'declare'||chr(10);
-wwv_flow_imp.g_varchar2_table(4) := '    l_count number;'||chr(10);
-wwv_flow_imp.g_varchar2_table(5) := 'begin'||chr(10);
-wwv_flow_imp.g_varchar2_table(6) := '    for t in (select table_name from user_tables where table_name = ''ATLAS_SETUP_SKIP'') loop'||chr(10);
-wwv_flow_imp.g_varchar2_table(7) := '        execute immediate ''drop table '' || t.table_name || '' purge'';'||chr(10);
-wwv_flow_imp.g_varchar2_table(8) := '    end loop;'||chr(10);
-wwv_flow_imp.g_varchar2_table(9) := '    select count(*) into l_count from user_tables where table_name in (''PRODUCTS'', ''CUSTOMERS'', ''AGENTS'', ''TICKETS'', ''TICKET_COMMENTS'', ''KB_ARTICLES'');'||chr(10);
-wwv_flow_imp.g_varchar2_table(10) := '    if l_count > 0 then'||chr(10);
-wwv_flow_imp.g_varchar2_table(11) := '        execute immediate ''create table atlas_setup_skip (x number)'';'||chr(10);
-wwv_flow_imp.g_varchar2_table(12) := '    end if;'||chr(10);
-wwv_flow_imp.g_varchar2_table(13) := 'end;'||chr(10);
-wwv_flow_imp.g_varchar2_table(14) := '/'||chr(10);
+wwv_flow_imp.g_varchar2_table(1) := '-- Records whether the schema already has the Atlas Support tables (ATLAS_SETUP_SKIP): then they are'||chr(10);
+wwv_flow_imp.g_varchar2_table(2) := '-- left as they are. A table with an Atlas name but without the Atlas columns (from another'||chr(10);
+wwv_flow_imp.g_varchar2_table(3) := '-- application) stops the installation with an error that names it.'||chr(10);
+wwv_flow_imp.g_varchar2_table(4) := 'declare'||chr(10);
+wwv_flow_imp.g_varchar2_table(5) := '    l_count   number;'||chr(10);
+wwv_flow_imp.g_varchar2_table(6) := '    l_problem varchar2(4000);'||chr(10);
+wwv_flow_imp.g_varchar2_table(7) := '    procedure check_table (p_table in varchar2, p_columns in apex_t_varchar2) is'||chr(10);
+wwv_flow_imp.g_varchar2_table(8) := '        l_missing varchar2(4000);'||chr(10);
+wwv_flow_imp.g_varchar2_table(9) := '    begin'||chr(10);
+wwv_flow_imp.g_varchar2_table(10) := '        for c in (select column_value col from table(p_columns)'||chr(10);
+wwv_flow_imp.g_varchar2_table(11) := '                  minus'||chr(10);
+wwv_flow_imp.g_varchar2_table(12) := '                  select column_name from user_tab_columns where table_name = p_table) loop'||chr(10);
+wwv_flow_imp.g_varchar2_table(13) := '            l_missing := l_missing || case when l_missing is not null then '', '' end || c.col;'||chr(10);
+wwv_flow_imp.g_varchar2_table(14) := '        end loop;'||chr(10);
+wwv_flow_imp.g_varchar2_table(15) := '        if l_missing is not null then'||chr(10);
+wwv_flow_imp.g_varchar2_table(16) := '            l_problem := l_problem || '' '' || p_table || '' has no column '' || l_missing || ''.'';'||chr(10);
+wwv_flow_imp.g_varchar2_table(17) := '        end if;'||chr(10);
+wwv_flow_imp.g_varchar2_table(18) := '    end check_table;'||chr(10);
+wwv_flow_imp.g_varchar2_table(19) := 'begin'||chr(10);
+wwv_flow_imp.g_varchar2_table(20) := '    for t in (select table_name from user_tables where table_name = ''ATLAS_SETUP_SKIP'') loop'||chr(10);
+wwv_flow_imp.g_varchar2_table(21) := '        execute immediate ''drop table '' || t.table_name || '' purge'';'||chr(10);
+wwv_flow_imp.g_varchar2_table(22) := '    end loop;'||chr(10);
+wwv_flow_imp.g_varchar2_table(23) := '    select count(*) into l_count from user_tables where table_name in (''PRODUCTS'', ''CUSTOMERS'', ''AGENTS'', ''TICKETS'', ''TICKET_COMMENTS'', ''KB_ARTICLES'');'||chr(10);
+wwv_flow_imp.g_varchar2_table(24) := '    if l_count = 0 then'||chr(10);
+wwv_flow_imp.g_varchar2_table(25) := '        return;'||chr(10);
+wwv_flow_imp.g_varchar2_table(26) := '    end if;'||chr(10);
+wwv_flow_imp.g_varchar2_table(27) := '    execute immediate ''create table atlas_setup_skip (x number)'';'||chr(10);
+wwv_flow_imp.g_varchar2_table(28) := '    for t in (select column_value tab from table(apex_t_varchar2(''PRODUCTS'', ''CUSTOMERS'', ''AGENTS'', ''TICKETS'', ''TICKET_COMMENTS'', ''KB_ARTICLES''))'||chr(10);
+wwv_flow_imp.g_varchar2_table(29) := '               where column_value not in (select table_name from user_tables)) loop'||chr(10);
+wwv_flow_imp.g_varchar2_table(30) := '        l_problem := l_problem || '' '' || t.tab || '' is missing.'';'||chr(10);
+wwv_flow_imp.g_varchar2_table(31) := '    end loop;'||chr(10);
+wwv_flow_imp.g_varchar2_table(32) := '    for t in (select 1 from user_tables where table_name = ''PRODUCTS'') loop'||chr(10);
+wwv_flow_imp.g_varchar2_table(33) := '        check_table(''PRODUCTS'', apex_t_varchar2(''PRODUCT_ID'', ''NAME'', ''CATEGORY'', ''CURRENT_VERSION'', ''DESCRIPTION''));'||chr(10);
+wwv_flow_imp.g_varchar2_table(34) := '    end loop;'||chr(10);
+wwv_flow_imp.g_varchar2_table(35) := '    for t in (select 1 from user_tables where table_name = ''CUSTOMERS'') loop'||chr(10);
+wwv_flow_imp.g_varchar2_table(36) := '        check_table(''CUSTOMERS'', apex_t_varchar2(''CUSTOMER_ID'', ''COMPANY'', ''CONTACT_NAME'', ''EMAIL'', ''COUNTRY'', ''PLAN'', ''CUSTOMER_SINCE''));'||chr(10);
+wwv_flow_imp.g_varchar2_table(37) := '    end loop;'||chr(10);
+wwv_flow_imp.g_varchar2_table(38) := '    for t in (select 1 from user_tables where table_name = ''AGENTS'') loop'||chr(10);
+wwv_flow_imp.g_varchar2_table(39) := '        check_table(''AGENTS'', apex_t_varchar2(''AGENT_ID'', ''NAME'', ''TEAM'', ''EMAIL''));'||chr(10);
+wwv_flow_imp.g_varchar2_table(40) := '    end loop;'||chr(10);
+wwv_flow_imp.g_varchar2_table(41) := '    for t in (select 1 from user_tables where table_name = ''TICKETS'') loop'||chr(10);
+wwv_flow_imp.g_varchar2_table(42) := '        check_table(''TICKETS'', apex_t_varchar2(''TICKET_ID'', ''CUSTOMER_ID'', ''PRODUCT_ID'', ''AGENT_ID'', ''SUBJECT'', ''DESCRIPTION'', ''PRIORITY'', ''STATUS'', ''CATEGORY'', ''CHANNEL'', ''CREATED_AT'', ''RESOLVED_AT'', ''SATISFACTION''));'||chr(10);
+wwv_flow_imp.g_varchar2_table(43) := '    end loop;'||chr(10);
+wwv_flow_imp.g_varchar2_table(44) := '    for t in (select 1 from user_tables where table_name = ''TICKET_COMMENTS'') loop'||chr(10);
+wwv_flow_imp.g_varchar2_table(45) := '        check_table(''TICKET_COMMENTS'', apex_t_varchar2(''COMMENT_ID'', ''TICKET_ID'', ''AUTHOR_TYPE'', ''AUTHOR_NAME'', ''BODY'', ''CREATED_AT''));'||chr(10);
+wwv_flow_imp.g_varchar2_table(46) := '    end loop;'||chr(10);
+wwv_flow_imp.g_varchar2_table(47) := '    for t in (select 1 from user_tables where table_name = ''KB_ARTICLES'') loop'||chr(10);
+wwv_flow_imp.g_varchar2_table(48) := '        check_table(''KB_ARTICLES'', apex_t_varchar2(''ARTICLE_ID'', ''PRODUCT_ID'', ''TITLE'', ''BODY'', ''UPDATED_ON''));'||chr(10);
+wwv_flow_imp.g_varchar2_table(49) := '    end loop;'||chr(10);
+wwv_flow_imp.g_varchar2_table(50) := '    if l_problem is not null then'||chr(10);
+wwv_flow_imp.g_varchar2_table(51) := '        raise_application_error(-20001, ''This schema already has tables named like the Atlas Support tables, but'''||chr(10);
+wwv_flow_imp.g_varchar2_table(52) := '            || '' not the Atlas Support ones, so they were left as they are:'' || l_problem'||chr(10);
+wwv_flow_imp.g_varchar2_table(53) := '            || '' Import the application into a workspace whose schema has none of the tables PRODUCTS,'''||chr(10);
+wwv_flow_imp.g_varchar2_table(54) := '            || '' CUSTOMERS, AGENTS, TICKETS, TICKET_COMMENTS and KB_ARTICLES.'');'||chr(10);
+wwv_flow_imp.g_varchar2_table(55) := '    end if;'||chr(10);
+wwv_flow_imp.g_varchar2_table(56) := 'end;'||chr(10);
+wwv_flow_imp.g_varchar2_table(57) := '/'||chr(10);
 wwv_flow_imp_shared.create_install_script(
  p_id=>wwv_flow_imp.id(39911000000000001)
 ,p_install_id=>wwv_flow_imp.id(39911000000000000)

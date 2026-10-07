@@ -82,9 +82,15 @@ Click **Run Application** and sign in with your workspace user.
 
 The import creates the six tables of the Atlas Support sample schema and their data in your
 workspace's schema, the same as `setup/atlas/install.sql`, and gives you, the developer who imports
-it, the **Administrator** role. If the schema already has any of the Atlas tables (you ran
-`install.sql` in Chapter 2, for example), they stay as they are. If you import the application
-first, skip `install.sql` later: the tables are already there.
+it, the **Administrator** role. If the schema already has the Atlas tables (you ran `install.sql`
+in Chapter 2, for example), they stay as they are. If you import the application first, skip
+`install.sql` later: the tables are already there.
+
+Use a workspace whose schema has no other tables named `PRODUCTS`, `CUSTOMERS`, `AGENTS`, `TICKETS`,
+`TICKET_COMMENTS` or `KB_ARTICLES`. If it has one from another application (a `CUSTOMERS` table
+with other columns, for example), the import leaves it alone and stops with *"Supporting Objects
+Install Error"*; **Install Summary** names the table. On apex.oracle.com you can request a new
+workspace for the book.
 
 Other users of the workspace can open it and view the data; to change data, they need the
 **Contributor** or **Administrator** role in **Shared Components › Application Access Control**.
